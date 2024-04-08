@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stitch </title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: "微軟正黑體";
+            font-size: small;
+            line-height: 140px;
+            color: rgb(194, 194, 194);   
+        }
+
+        html,
+        body
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        } 
+        div{
+            display: inline-block;
+        }
+
+        .container{
+            width: 700px;
+            height: 300px;
+            background: white;
+            border: 1px solid gray 0;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+
+        /* 大盒子-對body對位置 */
+        .body{ 
+            width: 400px;
+            height: 80px;
+            border: 0.5px solid rgb(201, 201, 201);
+            background:linear-gradient(to bottom,white 10%,rgb(226, 226, 226) 60%,white 100%);
+            position: relative;
+        }
+        .body::after{
+            content: "";
+            width: 40px;
+            height: 80px;
+            background:linear-gradient(to bottom,white 10%,rgb(211, 211, 211) 60%,white 100%);
+            border: 0.15px solid rgb(201, 201, 201);
+            border-radius: 10%;
+            position: absolute;
+            top: 0px;
+            left: -80px;
+        }
+        .body::before{
+            content: "";
+            width: 38px;
+            height: 60px;
+            background:linear-gradient(to bottom,white 20%,rgb(211, 211, 211) 60%,white 100%);
+            border: 0.15px solid rgb(201, 201, 201);
+            position: absolute;
+            top: 10px;
+            left: -40px;
+        }
+        .foot{
+            width: 40px;
+            height: 80px;
+            border: 0px solid rgb(201, 201, 201);
+            background:rgb(39, 39, 39);
+            position: absolute;
+            top: 0%;
+            left: 45%;
+        }
+        /* 黃色液體 */
+        .foot::after{
+            content: "";
+            width: 180px;
+            height: 80px;
+            border: 0px solid rgb(201, 201, 201);
+            background:linear-gradient(to bottom,rgb(241, 247, 157) 0%,rgb(203, 207, 135) 60%,rgb(241, 247, 157) 100%);
+            position: absolute;
+            top: 0%;
+            left: 100%;
+        }
+        /* 針頭lid */
+        .foot::before{
+            content: "";
+            width: 40px;
+            height: 60px;
+            background:linear-gradient(to bottom,white 10%,rgb(211, 211, 211) 60%,white 100%);
+            border: 0.15px solid rgb(201, 201, 201);
+            border-radius: 10%;
+            position: absolute;
+            top: 10%;
+            left: 550%;
+        }
+        /* 針頭 */
+        .stich{
+            width: 70px;
+            height: 1.5px;
+            border: 0px solid rgb(201, 201, 201);
+            background:rgb(139, 139, 139);
+            position: absolute;
+            top: 50%;
+            right: -28%;
+        }
+        .line{
+            width: 178px;
+            height: 100px;
+            /* border: 0px solid rgb(201, 201, 201); */
+            /* background:rgb(139, 139, 139); */
+            background: linear-gradient(to right, rgba(241, 247, 157,0) 95%, #acacac 5%) repeat-x left top/12px 12px;
+            /* background-repeat: repeat; */
+            position: absolute;
+            top: 0%;
+            left: 0%;
+        }
+        .line::after{
+            content: "";
+            width: 190px;
+            height: 100px;
+            /* border: 0px solid rgb(201, 201, 201); */
+            /* background:rgb(139, 139, 139); */
+            background: linear-gradient(to right, rgba(241, 247, 157,0) 95%, #acacac 5%) repeat-x left top/12px 12px;
+            /* background-repeat: repeat; */
+            position: absolute;
+            top: 0%;
+            left: 120%;
+        }
+
+
+    </style>
+
+</head>
+<body>
+        <div class="container">
+            <div class="body">Made in Taiwan
+                <div class="foot"></div>
+                <div class="stich"></div>
+                <div class="line"></div>
+            </div>  
+        </div>
+    
+</body>
+</html>
